@@ -8,7 +8,7 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class App : Application() {
     companion object {
-        lateinit var carsDataBase:  AppDatabase
+        lateinit var carsDataBase: AppDatabase
     }
 
     override fun onCreate() {

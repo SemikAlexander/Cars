@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cars</string>
+    <string name="car_price">%1$s ₽</string>
+    <string name="car_year">Год выпуска: %1$s</string>
+    <string name="car_millage">%1$s км</string>
+    <string name="total_cars">Всего автомобилей: %1$s</string>
 </resources>

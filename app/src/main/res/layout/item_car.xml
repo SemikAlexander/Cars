@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alexander.test.cars.ui.extentions.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/bg_car_card">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCarPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/ic_car"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCarPhoto"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/gray_D8D8DC"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="63 000 000₽" />
+
+            <TextView
+                android:id="@+id/tvCarName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/gray_D8D8DC"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Aston Martin" />
+
+            <TextView
+                android:id="@+id/tvMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/gray_D8D8DC"
+                tools:text="Пробег: 200 000 км" />
+
+            <TextView
+                android:id="@+id/tvYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/gray_D8D8DC"
+                tools:text="Год: 2004" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/swipeBtnDelete"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_delete"
+        android:scaleType="centerCrop"
+        android:padding="45dp"
+        android:src="@drawable/ic_delete"
+        app:bring_to_clamp="100dp"
+        app:clamp="self"
+        app:gravity="right"
+        app:sticky="none"
+        tools:ignore="ContentDescription,MissingPrefix"
+        tools:translationX="-40dp" />
+
+</alexander.test.cars.ui.extentions.SwipeLayout>
