@@ -25,6 +25,9 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>() {
             onClickItem = {
 
             },
+            onPhotoClick = {
+
+            },
             onDeleteClickItem = {
                 viewModel.deleteCar(it)
             }
@@ -38,12 +41,9 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>() {
         binding.apply {
             setupRecyclerView()
 
-            viewModel.car.onEach {
-                carsAdapter.notifyDataSetChanged()
-            }.launchIn(lifecycleScope)
-
             viewModel.totalNumOfCars.onEach {
                 tvTotalCars.text = requireContext().getString(R.string.total_cars, it)
+                carsAdapter.refresh()
             }.launchIn(lifecycleScope)
 
             ivAddCar.setOnClickListener {

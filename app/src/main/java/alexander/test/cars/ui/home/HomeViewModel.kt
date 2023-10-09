@@ -68,24 +68,21 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             runCatching {
                 carsService.deleteCar(car)
             }.onFailure {
-
+                Log.e("ASO", it.message.toString())
             }.onSuccess {
-
+                getCountOfCars()
             }
         }
     }
-
-    private val _car = MutableStateFlow(false)
-    val car: StateFlow<Boolean> = _car
 
     fun addTestCar() {
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
                 carsService.addTestCar()
             }.onFailure {
-                _car.emit(false)
+                Log.e("ASO", it.message.toString())
             }.onSuccess {
-                _car.emit(true)
+                getCountOfCars()
             }
         }
     }

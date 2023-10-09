@@ -14,6 +14,7 @@ import coil.load
 
 class CarAdapter(
     val onClickItem: (Car) -> Unit = { },
+    val onPhotoClick: (Car) -> Unit = { },
     val onDeleteClickItem: (Car) -> Unit = { }
 ) : PagingDataAdapter<Car, CarAdapter.Holder>(CarsDiffUtil) {
 
@@ -40,6 +41,10 @@ class CarAdapter(
                     crossfade(true)
                     placeholder(R.drawable.ic_car)
                     error(R.drawable.ic_car)
+                }
+
+                ivCarPhoto.setOnClickListener {
+                    onPhotoClick(this)
                 }
 
                 itemView.setOnClickListener {
