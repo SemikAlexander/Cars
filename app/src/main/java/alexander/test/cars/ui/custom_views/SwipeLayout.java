@@ -1,4 +1,4 @@
-package alexander.test.cars.ui.extentions;
+package alexander.test.cars.ui.custom_views;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;

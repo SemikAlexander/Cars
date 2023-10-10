@@ -4,6 +4,8 @@ import alexander.test.cars.R
 import alexander.test.cars.data.db.data.Car
 import alexander.test.cars.databinding.ItemCarBinding
 import alexander.test.cars.ui.extentions.bitDepth
+import alexander.test.cars.ui.extentions.dp
+import alexander.test.cars.ui.extentions.onClickDebounce
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.google.android.material.shape.CornerFamily
 
 class CarAdapter(
     val onClickItem: (Car) -> Unit = { },
@@ -37,21 +40,34 @@ class CarAdapter(
                 tvMileage.text = itemView.context.getString(R.string.car_millage, bitDepth(mileage))
                 tvYear.text = itemView.context.getString(R.string.car_year, year.toString())
 
-                ivCarPhoto.load(R.drawable.ic_car) {
-                    crossfade(true)
-                    placeholder(R.drawable.ic_car)
-                    error(R.drawable.ic_car)
+                val photo = if (carPhotos.isEmpty()) {
+                    R.drawable.ic_car
+                } else {
+                    carPhotos[0]
                 }
 
-                ivCarPhoto.setOnClickListener {
+                ivCarPhoto.shapeAppearanceModel =
+                    ivCarPhoto.shapeAppearanceModel
+                        .toBuilder()
+                        .setTopLeftCorner(CornerFamily.ROUNDED, 16F.dp.toFloat())
+                        .setBottomLeftCorner(CornerFamily.ROUNDED, 16F.dp.toFloat())
+                        .build()
+
+                ivCarPhoto.load(photo) {
+                    crossfade(true)
+                    placeholder(R.drawable.ic_loading)
+                    error(R.drawable.ic_no_image)
+                }
+
+                ivCarPhoto.onClickDebounce {
                     onPhotoClick(this)
                 }
 
-                itemView.setOnClickListener {
+                itemView.onClickDebounce {
                     onClickItem(this)
                 }
 
-                swipeBtnDelete.setOnClickListener {
+                swipeBtnDelete.onClickDebounce {
                     onDeleteClickItem(this)
                 }
             }

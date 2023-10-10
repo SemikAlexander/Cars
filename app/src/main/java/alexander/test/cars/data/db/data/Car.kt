@@ -11,7 +11,8 @@ data class Car(
     @ColumnInfo(name = "car_price") val price: Int,
     @ColumnInfo(name = "car_year") val year: Int,
     @ColumnInfo(name = "car_mileage") val mileage: Int,
-    @ColumnInfo(name = "car_number") val carNumber: String
+    @ColumnInfo(name = "car_number") val carNumber: String,
+    @ColumnInfo(name = "car_photos") val carPhotos: List<String>
 ) {
     companion object {
         val carsList = listOf(

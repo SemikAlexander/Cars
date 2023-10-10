@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<alexander.test.cars.ui.extentions.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<alexander.test.cars.ui.custom_views.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="135dp"
     android:layout_marginBottom="16dp"
     android:background="@drawable/bg_car_card">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivCarPhoto"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
-
             android:src="@drawable/ic_car"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,4 +92,4 @@
         tools:ignore="ContentDescription,MissingPrefix"
         tools:translationX="-40dp" />
 
-</alexander.test.cars.ui.extentions.SwipeLayout>
+</alexander.test.cars.ui.custom_views.SwipeLayout>

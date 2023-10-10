@@ -56,12 +56,17 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
+    implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
+
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
 
     //Coil
     implementation("io.coil-kt:coil:$coilVersion")
+
+    //Mask for edit text
+    implementation ("ru.tinkoff.decoro:decoro:1.5.0")
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")

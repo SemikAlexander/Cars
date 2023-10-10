@@ -9,5 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="alexander.test.cars.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addCarFragment"
+            app:destination="@id/addCarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarFragment"
+        android:name="alexander.test.cars.ui.add_car.AddCarFragment"
+        android:label="fragment_add_car"
+        tools:layout="@layout/fragment_add_car" />
 </navigation>
